@@ -1,0 +1,103 @@
+{
+    "success": true,
+    "resModel": {
+        "articleList": [
+            {
+                "id": "1",
+                "title": "自信是胜利的起点，坚持是胜利的终点",
+                "content": "自信是一个人的人格魅力，它有着很大的吸引力，不管你是谁，你要做什么，你想达成什么事情，和自信这两个字是密不可分。 我们大部分人的生活都是每天平平...",
+                "imgUrl": "//upload-images.jianshu.io/upload_images/8029359-dd352da7abb50dd6.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+            },
+            {
+                "id": "2",
+                "title": "自信是胜利的起点，坚持是胜利的终点",
+                "content": "自信是一个人的人格魅力，它有着很大的吸引力，不管你是谁，你要做什么，你想达成什么事情，和自信这两个字是密不可分。 我们大部分人的生活都是每天平平...",
+                "imgUrl": "//upload-images.jianshu.io/upload_images/8029359-dd352da7abb50dd6.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+            },
+            {
+                "id": "3",
+                "title": "自信是胜利的起点，坚持是胜利的终点",
+                "content": "自信是一个人的人格魅力，它有着很大的吸引力，不管你是谁，你要做什么，你想达成什么事情，和自信这两个字是密不可分。 我们大部分人的生活都是每天平平...",
+                "imgUrl": "//upload-images.jianshu.io/upload_images/8029359-dd352da7abb50dd6.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+            },
+            {
+                "id": "4",
+                "title": "自信是胜利的起点，坚持是胜利的终点",
+                "content": "自信是一个人的人格魅力，它有着很大的吸引力，不管你是谁，你要做什么，你想达成什么事情，和自信这两个字是密不可分。 我们大部分人的生活都是每天平平...",
+                "imgUrl": "//upload-images.jianshu.io/upload_images/8029359-dd352da7abb50dd6.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+            },
+            {
+                "id": "5",
+                "title": "自信是胜利的起点，坚持是胜利的终点",
+                "content": "自信是一个人的人格魅力，它有着很大的吸引力，不管你是谁，你要做什么，你想达成什么事情，和自信这两个字是密不可分。 我们大部分人的生活都是每天平平...",
+                "imgUrl": "//upload-images.jianshu.io/upload_images/8029359-dd352da7abb50dd6.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+            }
+        ],
+        "typeList": [
+            {
+                "id": "1",
+                "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png"
+            },
+            {
+                "id": "2",
+                "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png"
+            },
+            {
+                "id": "3",
+                "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
+            },
+            {
+                "id": "4",
+                "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+            },
+            {
+                "id": "5",
+                "imgUrl": "//cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+            }
+        ],
+        "writerList": [
+            {
+                "id": 5796592,
+                "slug": "86b81ed8e35c",
+                "nickname": "乔汉童",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/5796592/73837104-47e5-4fe9-a5be-054bd50b06f7.jpg",
+                "total_likes_count": 1237,
+                "total_wordage": 488632,
+                "is_following_user": false
+            }, {
+                "id": 12665193,
+                "slug": "757b5f9f910b",
+                "nickname": "宇文歡",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/12665193/828a449f-efbb-4540-b0af-f6c314810515.jpg",
+                "total_likes_count": 314,
+                "total_wordage": 118293,
+                "is_following_user": false
+            }, {
+                "id": 607979,
+                "slug": "30f0206be5c1",
+                "nickname": "一只支",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/607979/2326a842-dc37-48f2-b15b-239b47700e26.jpg",
+                "total_likes_count": 1642,
+                "total_wordage": 639194,
+                "is_following_user": false
+            }, {
+                "id": 2844887,
+                "slug": "28b0d7887971",
+                "nickname": "红瑀",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/2844887/cf3b6f90-774a-4ea7-9e59-b29f2f4b7ad6.jpg",
+                "total_likes_count": 10637,
+                "total_wordage": 306110,
+                "is_following_user": false
+            }, {
+                "id": 8972166,
+                "slug": "b91cc2d507d0",
+                "nickname": "冰千里",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/8972166/bd7164e9-2272-4ecf-91d0-f4903a150d4f.jpg",
+                "total_likes_count": 6566,
+                "total_wordage": 411004,
+                "is_following_user": false
+            }
+        ]
+
+    }
+}
