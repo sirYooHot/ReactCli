@@ -13,6 +13,7 @@ const defaultState = fromJS({
 });
 
 
+
 //封装switch条件中的内容；
 const initHomeData = (state, action) => {
     return state.merge({

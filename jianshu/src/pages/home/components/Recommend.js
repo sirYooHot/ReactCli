@@ -29,9 +29,7 @@ class Recommend extends PureComponent {
     }
 }
 
-const mapState = (state) => (
-    {
-        typeList: state.getIn(['home', 'typeList'])
-    }
-)
+const mapState = (state) => ({
+    typeList: state.getIn(['home', 'typeList'])
+})
 export default connect(mapState, null)(Recommend);

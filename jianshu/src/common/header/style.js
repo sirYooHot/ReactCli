@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import  LoginPic from '../../statics/jianshu_logo.png';
 
 // 导出创建带样式的标签
-export const HeaderWrapper = styled.div`
+export const HeaderWrap = styled.div`
     height: 58px;line-height: 58px;
     min-height: 58px;
     border-bottom: 1px solid #e2e2e2;
@@ -20,7 +20,7 @@ export const Logo = styled.div`
     background-size: contain;
 `
 
-export const Nav = styled.div`
+export const NavWrap = styled.div`
     box-sizing: border-box;
     width: 100%;
     max-width: 960px;
@@ -46,7 +46,7 @@ export const NavItem = styled.div`
 
 `
 
-export const SearchWrapper = styled.div`
+export const NavSearchWrap = styled.div`
     position: relative;
     float: left;
 
@@ -104,7 +104,7 @@ export const NavSearch = styled.input.attrs({
         width: 250px;
     }
 `
-export const SearchInfo = styled.div`
+export const TagArea = styled.div`
     position: absolute;
     left: 0;
     top: 56px;
@@ -117,19 +117,19 @@ export const SearchInfo = styled.div`
     
 `
 
-export const SearchInfoTitleWrapper = styled.div`
+export const SrhTagHead = styled.div`
     overflow: hidden;
 
     margin: 0 0 10px 0;
 `
 
-export const SearchInfoTitle = styled.div`
+export const SrhTitle = styled.div`
     float: left;
     line-height: 20px;
     font-size: 14px;
     color: #969696;
 `
-export const SearchInfoSwitch = styled.span`
+export const ChgIconWrap = styled.span`
     float: right;
     
     font-size: 14px;
@@ -146,13 +146,13 @@ export const SearchInfoSwitch = styled.span`
         transform-origin: center center;
     }
 `
-export const SearchInfoList = styled.span`
+export const SrhTagList = styled.span`
     float: left;
 
     overflow: hidden;
 `
 
-export const SearchInfoItem = styled.a`
+export const TagItem = styled.a`
     float: left;
     
     margin: 0 10px 8px 0;

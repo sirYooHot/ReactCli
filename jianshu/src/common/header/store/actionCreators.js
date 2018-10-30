@@ -18,9 +18,9 @@ export const searchMouseLeave = () => ({
 });
 
 // 换一批
-export const searchClickChange = (page) => ({
+export const searchClickChange = (nowPage) => ({
     type: actionTypes.SEARCH_CLICKCHANGE,
-    page: page
+    nowPage: nowPage
 });
 
 

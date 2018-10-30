@@ -50,14 +50,7 @@ class Home extends PureComponent {
                         <Writer />
                     </Navigator>
                 </HomeWrapper>
-                {
-                    showScroll ? 
-                    <BackTop onClick={this.handleScrollTop}>
-                        <i className='iconfont backTop'>&#xe61f;</i>
-                    </BackTop> 
-                    : false
-                }
-                
+                { showScroll ? <BackTop onClick={this.handleScrollTop}><i className='iconfont backTop'>&#xe61f;</i></BackTop> : false }
             </div>
         )
     }

@@ -4,139 +4,99 @@ import { CSSTransition } from 'react-transition-group';
 import { actionCreators } from './store/index.js';
 import { Link } from 'react-router-dom';
 
-import {
-    HeaderWrapper, Logo, Nav,NavItem, SearchWrapper, 
-    NavSearch, SearchInfo, SearchInfoTitleWrapper, SearchInfoTitle, SearchInfoSwitch, 
-    SearchInfoList, SearchInfoItem, Addition, Button, 
-} from './style.js';
+import { HeaderWrap, Logo, NavWrap, NavItem, NavSearchWrap, NavSearch, 
+    TagArea, SrhTagHead, SrhTitle, ChgIconWrap, 
+    SrhTagList, TagItem, Addition, Button, } from './style.js';
 
 
 class Header extends Component {
-    
-    getListArea() {
-        const { 
-            focused, mouseEntered, searchTitleList, page, totalPage, 
-            handleMouseEnter, handleMouseLeave, handlePageChange
-        } = this.props;
-        const newList = searchTitleList.toJS();
+    // 搜索下拉
+    showTagArea() {
+        const { focused, mouseEntered, getTagList, nowPage, totalPage, 
+        tagMouseEnter, tagMouseLeave, tagPageChange } = this.props;
+        const newList = getTagList.toJS();
         const pageList = [];
 
         if(newList.length){
-            for(let i=page*10;i<(page+1)*10;i++){
+            for(let i=nowPage*10;i<(nowPage+1)*10;i++){
                 if(newList[i]){
-                    pageList.push(
-                        <SearchInfoItem key={newList[i]}>
-                            {newList[i]}
-                        </SearchInfoItem>
-                    )
+                    pageList.push( <TagItem key={newList[i]}>{ newList[i] }</TagItem> )
                 }
             }
         }
         if(focused || mouseEntered) {
-            return (
-                <SearchInfo 
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}>
-                    <SearchInfoTitleWrapper>
-                        <SearchInfoTitle>
+            return (<TagArea onMouseEnter={tagMouseEnter} onMouseLeave={tagMouseLeave}>
+                    <SrhTagHead>
+                        <SrhTitle>
                             热门搜索
-                        </SearchInfoTitle>
-                        <SearchInfoSwitch onClick={() => {handlePageChange(page, totalPage, this.switcherIcon)}}>
-                            <i 
-                            ref={(icon) => {this.switcherIcon = icon}}
-                            className='switcher iconfont'>&#xe603;</i>
+                        </SrhTitle>
+                        <ChgIconWrap onClick={() => {tagPageChange(nowPage, totalPage, this.switcherIcon)}}>
+                            <i ref={(icon) => {this.switcherIcon = icon}} className='switcher iconfont'>&#xe603;</i>
                             换一批
-                        </SearchInfoSwitch>
-                    </SearchInfoTitleWrapper>
-                    <SearchInfoList>
-                        { pageList }
-                    </SearchInfoList>
-                </SearchInfo>
-            )
+                        </ChgIconWrap>
+                    </SrhTagHead>
+                    <SrhTagList>{ pageList }</SrhTagList>
+            </TagArea>)
         }else {
             return null;
         }
     }
     
+    //html结构
     render() {
-        const { 
-            focused, handleInputFocus, handleIputBlur, searchTitleList
-        } = this.props;
-        return (
-            <HeaderWrapper>
-                <Link to="/">
-                    <Logo />
-                </Link>
-                <Nav>
-                    <NavItem className='left'>
-                        首页
-                    </NavItem>
-                    <NavItem className='left'>
-                        下载App
-                    </NavItem>
-                    <SearchWrapper>
-                        <CSSTransition 
-                            in={focused} timeout={1000}
-                            classNames='slide'>
-                            <NavSearch 
-                                className={focused ? 'focused' : ''}
-                                onFocus={() => {handleInputFocus(searchTitleList)}}
-                                onBlur={handleIputBlur}>
-                            </NavSearch>
-                        </CSSTransition>
-                        <i className={focused ? 
-                            'iconfont focused zoom' : 'iconfont zoom'
-                        }>&#xe800;</i>
-                        {this.getListArea()}
-                    </SearchWrapper>
-                    <NavItem className='right'>
-                        登陆
-                    </NavItem>
-                    <NavItem className='right'>
-                        <i className='iconfont'>&#xe636;</i>
-                    </NavItem>
-                </Nav>
-                <Addition>
-                    <Button className='writting'>
-                        <i className='iconfont'>&#xe6a4;</i>
-                        写文章
-                    </Button>
-                    <Button className='reg'>
-                        注册
-                    </Button>
-                </Addition>
-            </HeaderWrapper>
-        )
+        const { focused, searchFocus, sreachBlur, getTagList } = this.props;
+        return (<HeaderWrap>
+            <Link to="/"> <Logo /> </Link>
+            <NavWrap>
+                <NavItem className='left'>首页</NavItem>
+                <NavItem className='left'>下载App</NavItem>
+                <NavSearchWrap>
+                    <CSSTransition in={focused} timeout={1000} classNames='slide'>
+                        <NavSearch className={focused ? 'focused' : ''}
+                            onFocus={()=>{searchFocus(getTagList)}} onBlur={sreachBlur}>
+                        </NavSearch>
+                    </CSSTransition>
+                    <i className={focused ? 'iconfont focused zoom' : 'iconfont zoom'}>&#xe800;</i>
+                    {this.showTagArea()}
+                </NavSearchWrap>
+                <NavItem className='right'>登陆</NavItem>
+                <NavItem className='right'><i className='iconfont'>&#xe636;</i></NavItem>
+            </NavWrap>
+            <Addition>
+                <Button className='writting'><i className='iconfont'>&#xe6a4;</i>写文章</Button>
+                <Button className='reg'>注册</Button>
+            </Addition>
+        </HeaderWrap>)
     }
 }
 
-const mapStateToProps = (state) => {
+// 初始化数据
+const mapState = (state) => ({
+    focused: state.getIn(['header', 'focused']),
+    mouseEntered: state.getIn(['header', 'mouseEntered']),
+    getTagList: state.getIn(['header', 'getTagList']),
+    nowPage: state.getIn(['header', 'nowPage']),
+    totalPage: state.getIn(['header', 'totalPage'])
+})
+// 派发数据
+const mapDispatch = (dispatch) => {
     return {
-        focused: state.getIn(['header', 'focused']),
-        mouseEntered: state.getIn(['header', 'mouseEntered']),
-        searchTitleList: state.getIn(['header', 'searchTitleList']),
-        page: state.getIn(['header', 'page']),
-        totalPage: state.getIn(['header', 'totalPage'])
-    }
-}
-const mapDispathToProps = (dispatch) => {
-    return {
-        handleInputFocus(searchTitleList) {
-            (searchTitleList.size === 0)&&dispatch(actionCreators.getList())
+        searchFocus(getTagList) {
+            (getTagList.size === 0)&&dispatch(actionCreators.getList())
             dispatch(actionCreators.searchFocus());
         },
-        handleIputBlur() {
+        sreachBlur() {
             dispatch(actionCreators.searchBlur());
         },
-        handleMouseEnter() {
+        tagMouseEnter() {
             dispatch(actionCreators.searchMouseEnter());
         },
-        handleMouseLeave() {
+        tagMouseLeave() {
             dispatch(actionCreators.searchMouseLeave());
         },
-        handlePageChange(page, totalPage, switcherIcon) {
-            if(page < totalPage-1){
-                dispatch(actionCreators.searchClickChange(page+1));
+        tagPageChange(nowPage, totalPage, switcherIcon) {
+            if(nowPage < totalPage-1){
+                dispatch(actionCreators.searchClickChange(nowPage+1));
             }else {
                 dispatch(actionCreators.searchClickChange(0));
             }
@@ -153,4 +113,4 @@ const mapDispathToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispathToProps)(Header);
+export default connect(mapState, mapDispatch)(Header);

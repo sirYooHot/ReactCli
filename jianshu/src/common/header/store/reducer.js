@@ -6,8 +6,8 @@ import { fromJS } from 'immutable';
 const defaultState = fromJS({
     focused: false,
     mouseEntered: false,
-    searchTitleList: [],
-    page: 0,
+    getTagList: [],
+    nowPage: 0,
     totalPage: 1
 });
 
@@ -28,11 +28,11 @@ export default (state = defaultState, action) => {
         // 分页
         case actionTypes.CHANGE_LIST:
         return state.merge({
-            searchTitleList: action.data,
+            getTagList: action.data,
             totalPage: action.totalPage
         })
         case actionTypes.SEARCH_CLICKCHANGE:
-        return state.set('page', action.page);
+        return state.set('nowPage', action.nowPage);
         
 
         default:
