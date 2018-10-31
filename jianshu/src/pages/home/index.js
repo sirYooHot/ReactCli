@@ -37,10 +37,8 @@ class Home extends PureComponent {
                 <HomeWrapper>
                     <MainDetail>
                         <BarWrapper>
-                            <img 
-                                className='banner-img' 
-                                src='//upload.jianshu.io/admin_banners/web_images/4448/d9a0fd8f0622d2323161b68d2123c7f28837d28f.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540'
-                                alt=""/>
+                            <img className='banner-img' alt=""
+                            src='//upload.jianshu.io/admin_banners/web_images/4448/d9a0fd8f0622d2323161b68d2123c7f28837d28f.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540' />
                         </BarWrapper>
                         <Topic />
                         <List />
